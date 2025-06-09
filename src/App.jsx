@@ -1,12 +1,8 @@
-function App() {
+import Header from './components/Header'
+import Body from './components/Body'
 
-  return (
-    <>
-      <div className='font-bold text-center mt-10 text-2xl'>
-        Hello world.. This is the home page..
-        </div>
-    </>
-  )
+function App() {
+    return <Body />
 }
 
 export default App
