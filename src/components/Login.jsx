@@ -1,12 +1,15 @@
-import { BG_URL } from '../utils/urls'
+import { BG_URL, LOGO_URL } from '../utils/urls'
 import { validateDataSignIn, validateDataSignUp } from '../utils/validate'
-import Header from './Header'
 import { useRef, useState, useEffect } from 'react'
 import { auth } from '../utils/firebase'
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    updateProfile,
 } from 'firebase/auth'
+import { useDispatch } from 'react-redux'
+import { addUser } from '../utils/userSlice'
+import Header from './Header'
 
 const Login = () => {
     const [isSignUp, setIsSignUp] = useState(false)
@@ -15,6 +18,9 @@ const Login = () => {
     const name = useRef(null)
     const email = useRef(null)
     const password = useRef(null)
+
+    const dispatch = useDispatch()
+    // const navigate = useNavigate()
 
     useEffect(() => {
         if (name.current) name.current.value = ''
@@ -44,7 +50,23 @@ const Login = () => {
         )
             .then((userCredential) => {
                 const user = userCredential.user
-                console.log(user)
+                // update username while signinig up
+                updateProfile(user, {
+                    displayName: name.current.value,
+                })
+                    .then(() => {
+                        const { uid, email, displayName } = auth.currentUser
+                        dispatch(
+                            addUser({
+                                uid: uid,
+                                Email: email,
+                                name: displayName,
+                            })
+                        )
+                    })
+                    .catch((error) => {
+                        setErrorMessage(error.message)
+                    })
             })
             .catch((error) => {
                 const errorCode = error.code
@@ -61,10 +83,16 @@ const Login = () => {
         )
             .then((userCredential) => {
                 const user = userCredential.user
-                console.log(user)
+                const { uid, email, displayName } = user
+                dispatch(
+                    addUser({
+                        uid: uid,
+                        Email: email,
+                        name: displayName,
+                    })
+                )
             })
             .catch((error) => {
-                // const errorCode = error.code
                 const errorMessage = error.message
                 setErrorMessage(errorMessage)
             })
@@ -108,11 +136,12 @@ const Login = () => {
                         ref={password}
                         type="password"
                         placeholder="Password"
+                        autoComplete="off"
                         className="p-4 my-2 border-2 border-gray-200 rounded-md"
                     />
                     <p className="font-bold text-red-600">{errorMessage}</p>
                     <button
-                        className="p-3 my-5 w-full bg-red-600 rounded-md  text-xl font-bold hover:bg-red-500"
+                        className="p-3 my-5 w-full bg-red-600 rounded-md  text-xl font-bold hover:bg-red-500 cursor-pointer"
                         onClick={handleValidation}
                     >
                         {isSignUp ? 'Sign Up' : 'Sign In'}
