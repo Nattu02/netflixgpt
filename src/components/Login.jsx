@@ -1,4 +1,4 @@
-import { BG_URL, LOGO_URL } from '../utils/urls'
+import { BG_URL, LOGO_URL } from '../utils/constants'
 import { validateDataSignIn, validateDataSignUp } from '../utils/validate'
 import { useRef, useState, useEffect } from 'react'
 import { auth } from '../utils/firebase'

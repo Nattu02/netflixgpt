@@ -1,4 +1,4 @@
-import { LOGO_URL } from '../utils/urls'
+import { LOGO_URL } from '../utils/constants'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from '../utils/firebase'
 import { useNavigate } from 'react-router'
@@ -46,7 +46,7 @@ const Header = () => {
     }
 
     return (
-        <div className="flex justify-between bg-gradient-to-b from-black">
+        <div className="flex justify-between bg-gradient-to-b from-black absolute w-full">
             <img src={LOGO_URL} alt="Logo" className="w-60 py-5 px-5 " />
             {user && (
                 <div className="flex justify-between items-center mx-10 px-5">
