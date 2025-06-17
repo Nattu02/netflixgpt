@@ -1,7 +1,7 @@
 const VideoTitle = (props) => {
     const { title, overview } = props
     return (
-        <div className="absolute w-1/3  top-1/2 left-1/15 text-white">
+        <div className="absolute w-1/3  top-1/3 left-1/15 text-white">
             <h1 className="text-3xl font-bold ">{title}</h1>
             <p className="font-bold my-5 text-justify">{overview}</p>
             <div>
