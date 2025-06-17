@@ -16,7 +16,9 @@ const useVideoBackGround = (movieId) => {
         const videos = json.results
         const trailer = videos.filter((video) => video.type === 'Trailer')
 
-        const trailerKey = trailer.length ? trailer[0].key : videos[0].key
+        const trailerKey = trailer.length
+            ? trailer[trailer.length - 1].key
+            : videos[0].key
         dispatch(addTrailerKey(trailerKey))
     }
 

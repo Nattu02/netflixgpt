@@ -1,4 +1,3 @@
-import { BG_URL, LOGO_URL } from '../utils/constants'
 import { validateDataSignIn, validateDataSignUp } from '../utils/validate'
 import { useRef, useState, useEffect } from 'react'
 import { auth } from '../utils/firebase'
@@ -103,12 +102,9 @@ const Login = () => {
     }
 
     return (
-        <div
-            className="min-h-screen bg-cover bg-center"
-            style={{ backgroundImage: `url(${BG_URL})` }}
-        >
+        <div>
             <Header />
-            <div className="flex flex-col items-center w-2/7 mx-auto bg-[rgba(0,0,0,0.7)] text-white">
+            <div className="relative top-30 flex flex-col w-2/7 mx-auto items-center  bg-[rgba(0,0,0,0.7)] text-white ">
                 <form
                     onSubmit={(e) => {
                         e.preventDefault()
