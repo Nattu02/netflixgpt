@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import Browse from './components/Browse'
 import { Provider } from 'react-redux'
 import appStore from './utils/appStore'
+import GptSearch from './components/GptSearch'
 
 function App() {
     const approuter = createBrowserRouter([
@@ -14,6 +15,10 @@ function App() {
             path: '/browse',
             element: <Browse />,
         },
+        {
+            path: '/gptsearch',
+            element: <GptSearch />
+        }
     ])
 
     return (

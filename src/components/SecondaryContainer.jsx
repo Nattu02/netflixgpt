@@ -8,6 +8,7 @@ const SecondaryContainer = () => {
     const popularMovies = useSelector((store) => store.movies.popularMovies)
     const topRatedMovies = useSelector((store) => store.movies.topRatedMovies)
     const upcomingMovies = useSelector((store) => store.movies.upcomingMovies)
+    const trendingMovies = useSelector((store) => store.movies.trendingMovies)
 
     return (
         <div className="bg-black">
@@ -16,6 +17,7 @@ const SecondaryContainer = () => {
                 <Movielist title={'Popular Movies'} movies={popularMovies} />
                 <Movielist title={'Top Rated Movies'} movies={topRatedMovies} />
                 <Movielist title={'Upcoming Movies'} movies={upcomingMovies} />
+                <Movielist title={'Trending Movies'} movies={trendingMovies} />
             </div>
         </div>
     )
