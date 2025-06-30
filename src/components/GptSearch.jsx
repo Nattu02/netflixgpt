@@ -5,8 +5,7 @@ import Movielist from './Movielist'
 
 const GptSearch = () => {
     const gptResult = useSelector((store) => store.gpt.movieResults)
-    const movies = useSelector(state => state.gpt.movieList)
-    console.log(movies)
+    const movies = useSelector((state) => state.gpt.movieList)
     return (
         <div>
             <img
@@ -15,10 +14,14 @@ const GptSearch = () => {
                 className="fixed -z-10 top-0"
             />
             <GptSearchBar />
-            <div className=' bg-[rgba(0,0,0,0.7)] mt-20'>
+            <div className=" bg-[rgba(0,0,0,0.7)] mt-20">
                 {gptResult &&
                     gptResult.map((arr, index) => (
-                        <Movielist key={index} title={movies[index]} movies={arr} />
+                        <Movielist
+                            key={index}
+                            title={movies[index]}
+                            movies={arr}
+                        />
                     ))}
             </div>
         </div>
