@@ -6,13 +6,13 @@ const MovieCard = ({ movie }) => {
 
     return (
         <div className="relative ">
-            <h1 className="absolute bottom-2 left-2 text-2xl font-bold text-white">
+            <h1 className="absolute bottom-2 left-2 text-md md:text-2xl font-bold text-white">
                 {title}
             </h1>
             <img
                 alt="Movie poster"
                 src={'https://image.tmdb.org/t/p/w300/' + backdrop_path}
-                className="w-[25    0px] h-[200px] rounded-lg"
+                className="w-[150px]  md:w-[250px] h-[170px] md:h-[200px] rounded-lg"
             />
         </div>
     )

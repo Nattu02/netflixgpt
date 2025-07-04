@@ -7,7 +7,7 @@ const Body = () => {
             <img
                 src={BG_URL}
                 alt="Background image"
-                className="absolute -z-10"
+                className="h-screen object-cover md:w-screen absolute -z-10"
             />
             <Login />
         </div>

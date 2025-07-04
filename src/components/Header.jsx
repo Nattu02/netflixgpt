@@ -46,18 +46,18 @@ const Header = () => {
     }
 
     return (
-        <div className="flex justify-between bg-gradient-to-b from-black fixed w-full z-10">
-            <img src={LOGO_URL} alt="Logo" className="w-60 py-5 px-5 " />
+        <div className="w-screen flex flex-col md:flex-row md:justify-between bg-gradient-to-b from-black fixed z-10">
+            <img src={LOGO_URL} alt="Logo" className="w-50 py-4 px-2 md:w-60 md:py-5 md:px-5 mx-auto md:mx-0" />
             {user && (
                 <div className="flex justify-between items-center mx-10 px-5">
-                    <Link to={"/gptsearch"} className="mx-4 p-2 bg-red-600 font-bold text-white text-md cursor-pointer rounded-md">
+                    <Link to={"/gptsearch"} className="mx-4 p-2 bg-red-600 font-bold text-white text-md cursor-pointer rounded-md w-fit md:w-fit md:mx-4 md:p-2  md:font-bold  md:text-md ">
                         GPT Search
                     </Link>
-                    <div>
+                    {/* <div>
                         <h1 className="text-white text-lg font-bold">
                             Welcome {user?.name} 😍
                         </h1>
-                    </div>
+                    </div> */}
                     <button
                         onClick={handleSignOut}
                         className="mx-4 p-2 bg-red-600 font-bold text-white text-md cursor-pointer rounded-md"

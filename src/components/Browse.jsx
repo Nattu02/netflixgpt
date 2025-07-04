@@ -15,7 +15,7 @@ const Browse = () => {
     useTrendingMovies()
 
     return (
-        <div>
+        <div className=''>
             <Header />
             <MainContainer />
             <SecondaryContainer />

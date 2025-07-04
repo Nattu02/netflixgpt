@@ -11,7 +11,7 @@ const GptSearch = () => {
             <img
                 src={BG_URL}
                 alt="Background image"
-                className="fixed -z-10 top-0"
+                className="fixed -z-10 top-0 h-screen object-cover md:w-screen"
             />
             <GptSearchBar />
             <div className=" bg-[rgba(0,0,0,0.7)] mt-20">

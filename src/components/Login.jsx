@@ -104,7 +104,7 @@ const Login = () => {
     return (
         <div>
             <Header />
-            <div className="relative top-30 flex flex-col w-2/7 mx-auto items-center  bg-[rgba(0,0,0,0.7)] text-white ">
+            <div className="relative top-30 flex flex-col w-[90%] mx-[5%] md:w-2/7 md:mx-auto items-center  bg-[rgba(0,0,0,0.7)] text-white ">
                 <form
                     onSubmit={(e) => {
                         e.preventDefault()
