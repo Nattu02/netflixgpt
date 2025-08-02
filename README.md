@@ -58,10 +58,14 @@ This project mimics the Netflix UI and provides real-time movie search suggestio
 
     ```
 4. **Run the development server**
+    ```
     npm run dev
+    ```
 
 5. **Build for production**
+    ```
     npm run build
+    ```
 
 ## 🌐 API Information
 
